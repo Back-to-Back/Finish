@@ -10,7 +10,7 @@ const posts: Post[] = [
     author: "Alex Chen",
     date: "March 15, 2024",
     category: "Tech",
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad0c3"
+    imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const posts: Post[] = [
     author: "Sarah Johnson",
     date: "March 14, 2024",
     category: "Lifestyle",
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad0c3"
+    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const posts: Post[] = [
     author: "Michael Brown",
     date: "March 13, 2024",
     category: "Politics",
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad0c3"
+    imageUrl: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const posts: Post[] = [
     author: "Emily White",
     date: "March 12, 2024",
     category: "Career",
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad0c3"
+    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const posts: Post[] = [
     author: "David Lee",
     date: "March 11, 2024",
     category: "Books",
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad0c3"
+    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
   }
 ];
 

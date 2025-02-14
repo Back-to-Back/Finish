@@ -8,6 +8,8 @@ import Navigation from "./components/Navigation";
 import Sidebar from "./components/Sidebar";
 import Index from "./pages/Index";
 import PostDetail from "./pages/PostDetail";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +26,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/post/:id" element={<PostDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
