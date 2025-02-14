@@ -1,6 +1,5 @@
-
-import { useEffect, useState } from "react";
-import PostCard, { Post } from "@/components/PostCard";
+import { useParams } from "react-router-dom";
+import { Post } from "@/components/PostCard";
 
 const posts: Post[] = [
   {
@@ -50,42 +49,39 @@ const posts: Post[] = [
   }
 ];
 
-const Index = () => {
-  const [visiblePosts, setVisiblePosts] = useState<Post[]>([]);
+const PostDetail = () => {
+  const { id } = useParams();
+  const post = posts.find((p) => p.id === Number(id));
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-up");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll(".post-card").forEach((post) => {
-      observer.observe(post);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    setVisiblePosts(posts);
-  }, []);
+  if (!post) {
+    return <div>Post not found</div>;
+  }
 
   return (
     <div className="pt-24 pl-72 pr-6 pb-12 min-h-screen">
-      <h1 className="text-4xl font-bold mb-8 animate-fade-in">Latest Posts</h1>
-      <div className="post-grid">
-        {visiblePosts.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-      </div>
+      <article className="max-w-3xl mx-auto glass-effect p-8 rounded-lg animate-fade-in">
+        <img
+          src={post.imageUrl}
+          alt={post.title}
+          className="w-full h-64 object-cover rounded-lg mb-6"
+        />
+        <header className="mb-8">
+          <span className="text-primary">{post.category}</span>
+          <h1 className="text-4xl font-bold mt-2">{post.title}</h1>
+          <div className="flex justify-between items-center mt-4 text-gray-600">
+            <span>{post.author}</span>
+            <span>{post.date}</span>
+          </div>
+        </header>
+        <div className="prose max-w-none">
+          <p className="text-lg leading-relaxed">
+            {post.excerpt}
+            {/* Add more content here */}
+          </p>
+        </div>
+      </article>
     </div>
   );
 };
 
-export default Index;
+export default PostDetail;
