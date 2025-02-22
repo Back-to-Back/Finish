@@ -11,7 +11,10 @@ const PORT = process.env.PORT || 10000;
 const HOST = "0.0.0.0";
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "http://finish-rho.vercel.app", // Replace with your actual frontend URL
+  credentials: true
+}));
 app.use(express.json());
 
 // Serve static files from the uploads folder using an absolute path

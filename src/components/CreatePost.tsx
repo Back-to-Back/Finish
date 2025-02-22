@@ -14,6 +14,8 @@ const CreatePost: React.FC = () => {
   const [seoDescription, setSeoDescription] = useState("");
   const navigate = useNavigate();
 
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -36,7 +38,7 @@ const CreatePost: React.FC = () => {
     if (image) formData.append("image", image);
   
     try {
-      await axios.post("http://localhost:5000/api/posts", formData, {
+      await axios.post(`${API_BASE_URL}/api/posts`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       navigate("/postgrid");

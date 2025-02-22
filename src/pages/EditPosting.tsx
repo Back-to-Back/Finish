@@ -17,10 +17,11 @@ const EditPosting: React.FC = () => {
   const [seoDescription, setSeoDescription] = useState("");
   const [currentImageUrl, setCurrentImageUrl] = useState("");
 
+  const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/postings/${id}`);
+        const response = await axios.get(`${API_URL}/api/postings/${id}`);
         const post = response.data;
 
         setTitle(post.title);
@@ -29,7 +30,7 @@ const EditPosting: React.FC = () => {
         setExcerpt(post.excerpt);
         setSeoTitle(post.seoTitle);
         setSeoDescription(post.seoDescription);
-        setCurrentImageUrl(post.image ? `http://localhost:5000/${post.image}` : "");
+        setCurrentImageUrl(post.image ? `${API_URL}/${post.image}` : "");
       } catch (error) {
         console.error("Error fetching post:", error);
       }
@@ -59,7 +60,7 @@ const EditPosting: React.FC = () => {
     }
   
     try {
-      await axios.put(`http://localhost:5000/api/postings/${id}`, formData, {
+      await axios.put(`${API_URL}/api/postings/${id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       navigate("/admin-dashboard");

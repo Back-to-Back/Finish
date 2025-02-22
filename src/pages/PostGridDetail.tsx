@@ -20,12 +20,12 @@ interface Post {
 const PostGridDetail = () => {
   const { id } = useParams();
   const [post, setPost] = useState<Post | null>(null);
-  const API_URL = `http://localhost:5000/api/posts/${id}`;
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(`${API_URL}/api/posts/${id}`);
         const data = await response.json();
         setPost(data);
       } catch (error) {
@@ -51,7 +51,7 @@ const PostGridDetail = () => {
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         {post.image && (
           <img
-            src={`http://localhost:5000/${post.image}`}
+            src={`${API_URL}/${post.image}`}
             alt={post.title}
             className="w-full h-64 object-cover"
           />
