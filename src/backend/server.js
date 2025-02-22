@@ -5,8 +5,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
-const fs = require("fs");
-const mime = require("mime-types");
 
 const app = express();
 const PORT = process.env.PORT || 10000;
