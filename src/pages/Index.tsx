@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import PostCard, { Post } from "@/components/PostCard";
 
@@ -8,7 +7,7 @@ const posts: Post[] = [
     title: "The Future of AI in Web Development",
     excerpt: "Exploring how artificial intelligence is revolutionizing the way we build websites and applications.",
     author: "Alex Chen",
-    date: "March 15, 2024",
+    date: "Feb 15, 2025",
     category: "Tech",
     imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
   },
@@ -17,36 +16,36 @@ const posts: Post[] = [
     title: "Mindful Living in a Digital Age",
     excerpt: "Tips and strategies for maintaining balance and wellness in our technology-driven world.",
     author: "Sarah Johnson",
-    date: "March 14, 2024",
+    date: "Feb 10, 2025",
     category: "Lifestyle",
     imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
   },
   {
     id: 3,
-    title: "Global Economic Trends 2024",
+    title: "Global Economic Trends 2025",
     excerpt: "Analysis of current economic patterns and their impact on international markets.",
     author: "Michael Brown",
-    date: "March 13, 2024",
+    date: "Feb 7, 2025",
     category: "Politics",
-    imageUrl: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+    imageUrl: "/trends.jpg"
   },
   {
     id: 4,
     title: "Remote Work Success Stories",
     excerpt: "Real-world examples of professionals thriving in remote work environments.",
     author: "Emily White",
-    date: "March 12, 2024",
+    date: "Feb 3, 2025",
     category: "Career",
-    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+    imageUrl: "/stories.jpg"
   },
   {
     id: 5,
-    title: "Must-Read Books of 2024",
+    title: "Must-Read Books of 2025",
     excerpt: "A curated selection of this year's most impactful and engaging books across genres.",
     author: "David Lee",
-    date: "March 11, 2024",
+    date: "Jan 30, 2025",
     category: "Books",
-    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+    imageUrl: "/books.jpg"
   }
 ];
 
@@ -78,7 +77,7 @@ const Index = () => {
 
   return (
     <div className="pt-24 pl-72 pr-6 pb-12 min-h-screen">
-      <h1 className="text-4xl font-bold mb-8 animate-fade-in">Latest Posts</h1>
+      <h1 className="text-4xl font-bold mb-8 animate-fade-in"> Posts</h1>
       <div className="post-grid">
         {visiblePosts.map((post) => (
           <PostCard key={post.id} post={post} />

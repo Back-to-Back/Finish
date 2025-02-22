@@ -34,7 +34,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+    background-image: linear-gradient(to right, #ffffff, #f8f8f8, #ffffff);
     background-attachment: fixed;
     min-height: 100vh;
   }
@@ -62,4 +62,9 @@
 
 .post-grid {
   @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+nav h1 {
+  font-size: 20px;
+  font-style: italic;
+  color: blue;
 }

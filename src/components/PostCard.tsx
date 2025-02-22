@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 export interface Post {
@@ -36,6 +35,6 @@ const PostCard = ({ post }: PostCardProps) => {
       </article>
     </Link>
   );
-};
 
+};
 export default PostCard;
