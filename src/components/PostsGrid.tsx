@@ -19,7 +19,7 @@ interface Post {
 
 const PostsGrid = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000/api/posts";
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -49,7 +49,7 @@ const PostsGrid = () => {
               <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-[540px] flex flex-col">
                 {post.image && (
                   <img
-                    src={`http://localhost:5000/${post.image}`}
+                    src={`${API_URL}/${post.image}`}
                     alt={post.title}
                     className="w-full h-48 object-cover"
                   />

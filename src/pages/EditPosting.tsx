@@ -17,7 +17,7 @@ const EditPosting: React.FC = () => {
   const [seoDescription, setSeoDescription] = useState("");
   const [currentImageUrl, setCurrentImageUrl] = useState("");
 
-  const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     const fetchPost = async () => {
       try {

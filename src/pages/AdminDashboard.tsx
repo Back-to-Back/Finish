@@ -31,7 +31,7 @@ const AdminDashboard: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [postings, setPostings] = useState<Posting[]>([]);
 
-  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
   const API_URL = `${API_BASE_URL}/api/posts`;
   const API_URL2 = `${API_BASE_URL}/api/postings`;
 
