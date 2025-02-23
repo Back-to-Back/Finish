@@ -12,7 +12,7 @@ const HOST = "0.0.0.0";
 
 // Middleware
 app.use(cors({
-  origin: "http://finish-rho.vercel.app", // Replace with your actual frontend URL
+  origin: ["http://localhost:8080", "http://finish-rho.vercel.app"], // Replace with your actual frontend URL
   credentials: true
 }));
 app.use(express.json());
