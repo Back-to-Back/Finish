@@ -24,7 +24,7 @@ const PostsGrid = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(`${API_URL}/api/posts`);
         const data = await response.json();
         setPosts(data);
       } catch (error) {
