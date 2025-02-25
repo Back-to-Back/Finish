@@ -18,14 +18,17 @@ export const register = async (username: string, email: string, password: string
 
 export const login = async (email: string, password: string) => {
   try {
-    const response = await axios.post(
-      `${API_URL}/auth/login`,
-      { email, password },
-      { headers: { "Content-Type": "application/json" } }
-    );
-    return response?.data || {};
+    const response = await axios.post(`${API_URL}/auth/login`, { email, password });
+    
+    console.log("API Login Response:", response.data); // <-- Debugging log
+
+    if (!response.data) {
+      throw new Error("Empty response from server");
+    }
+
+    return response.data; // <-- Make sure we return the actual response data
   } catch (error) {
-    console.error('Login Error:', error.response?.data || error.message);
+    console.error("Login Error:", error.response?.data || error.message);
     throw error;
   }
 };

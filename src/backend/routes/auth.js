@@ -39,10 +39,10 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET);
 
     // Return role and isPaid status as well
-    res.json({
-      token: token || null,
-      userId: user._id || null,
-      role: user.role || "guest",
+    return res.json({
+      token: token,
+      userId: user._id,
+      role: user.role,
       isPaid: user.isPaid || false, // <-- Add this flag to indicate if the user has paid
     });
   } catch (err) {

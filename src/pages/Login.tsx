@@ -8,27 +8,28 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Call login API
       const response = await login(email, password);
+      
+      console.log("Login API Response:", response); // <-- Debugging log
   
-      const { token, userId, role, isPaid } = response || {};
-      if (!token || !userId) throw new Error("Invalid response from server");
-
-      localStorage.setItem('token', token);
-      localStorage.setItem('userId', userId);
-      localStorage.setItem('role', role);
+      if (!response || !response.token || !response.userId || !response.role) {
+        throw new Error("Invalid response from server");
+      }
   
-      // Redirect based on role and payment status
-      if (response.data.role === 'member') {
-        if (response.data.isPaid) {
-          window.location.href = '/dashboard'; // Only go to dashboard if paid
+      localStorage.setItem("token", response.token);
+      localStorage.setItem("userId", response.userId);
+      localStorage.setItem("role", response.role);
+  
+      if (response.role === "member") {
+        if (response.isPaid) {
+          window.location.href = "/dashboard";
         } else {
-          window.location.href = '/payment'; // Otherwise, send back to payment/registration
+          window.location.href = "/payment";
         }
-      } else if (response.data.role === 'admin') {
-        window.location.href = '/admin-dashboard';
+      } else if (response.role === "admin") {
+        window.location.href = "/admin-dashboard";
       } else {
-        window.location.href = '/';
+        window.location.href = "/";
       }
     } catch (err: any) {
       alert(err.response?.data || err.message);
