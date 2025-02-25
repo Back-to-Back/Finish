@@ -4,8 +4,10 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
+
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 // Register
-router.post('/register', async (req, res) => {
+router.post(`${API_URL}/auth/register`, async (req, res) => {
   const { username, email, password, role } = req.body;
   try {
     const user = new User({ username, email, password, role });
@@ -22,7 +24,7 @@ router.post('/register', async (req, res) => {
 });
 
 // Login
-router.post('/login', async (req, res) => {
+router.post(`${API_URL}/auth/login`, async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
