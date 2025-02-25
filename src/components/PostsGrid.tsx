@@ -37,7 +37,7 @@ const PostsGrid = () => {
 
   return (
     <div className="container mx-auto p-5">
-      <h2 className="text-3xl mt-4 font-bold mb-6">Blog Posts</h2>
+      <h2 className="text-3xl mt-8 font-bold mb-6">Blog Posts</h2>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-auto">
         {posts.map((post) => {
           // Determine the author name based on the type of the author field

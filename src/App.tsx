@@ -38,7 +38,7 @@ const App = () => {
         <Navigation />
         <div className="flex flex-col md:flex-row">
           <Sidebar />
-          <main className="flex-1 p-4 md:ml-64">
+          <main className="flex-1 p-4">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/post/:id" element={<PostDetail />} />
