@@ -11,7 +11,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
+    <div className="flex h-screen">
       {/* Mobile Toggle Button */}
       <button
         className="fixed top-5 left-5 z-50 p-2 text-white bg-indigo-600 rounded-md md:hidden"
@@ -165,7 +165,7 @@ const Sidebar = () => {
           </div>
         </div>
       </aside>
-    </>
+    </div>
   );
 };
 
