@@ -76,7 +76,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="pt-24 pl-72 pr-6 pb-12 min-h-screen">
+    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-auto">
       <h1 className="text-4xl font-bold mb-8 animate-fade-in"> Posts</h1>
       <div className="post-grid">
         {visiblePosts.map((post) => (

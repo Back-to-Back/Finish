@@ -20,8 +20,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-24 pl-72 pr-6 pb-12 min-h-screen">
-      <div className="max-w-2xl mx-auto glass-effect p-8 rounded-lg animate-fade-in">
+    <div className="pt-24 pr-6 pb-12 min-h-screen">
+      <div className="max-w-2xl glass-effect p-8 rounded-lg animate-fade-in">
         <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
