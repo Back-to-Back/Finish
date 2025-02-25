@@ -10,17 +10,36 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 const HOST = "0.0.0.0";
 
-// Middleware
-app.use(cors({
-  origin: "https://finish-rho.vercel.app", // Replace with your actual frontend URL
+// CORS Configuration
+const corsOptions = {
+  origin: "https://finish-rho.vercel.app", // Frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
+
+// Manually set CORS headers
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://finish-rho.vercel.app");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+
+  // Handle preflight requests
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
+// Middleware
 app.use(express.json());
 
-// Serve static files from the uploads folder using an absolute path
+// Serve static files from the uploads folder
 app.use("/uploads", express.static(path.resolve(__dirname, "uploads")));
-
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
@@ -36,4 +55,5 @@ mongoose.connect(process.env.MONGO_URI, {
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-const server =app.listen(PORT, HOST,() => console.log(`Server running on port ${PORT}`));
+// Start Server
+const server = app.listen(PORT, HOST, () => console.log(`Server running on port ${PORT}`));
