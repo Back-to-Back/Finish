@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { login } from '../services/api';
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigate = useNavigate();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -22,12 +24,12 @@ const Login: React.FC = () => {
   
       if (response.role === "member") {
         if (response.isPaid) {
-          window.location.href = "/dashboard";
+          navigate("/dashboard");
         } else {
-          window.location.href = "/payment";
+          navigate("/payment");
         }
       } else if (response.role === "admin") {
-        window.location.href = "/admin-dashboard";
+        navigate("/admin-dashboard");
       } else {
         window.location.href = "/";
       }
