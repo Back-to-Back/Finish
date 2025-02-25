@@ -51,4 +51,4 @@ router.post(`${API_URL}/auth/login`, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
