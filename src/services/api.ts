@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_BACKEND_URL || "https://finish-jh38.onrender.com/api";
+const API_URL = `${import.meta.env.VITE_BACKEND_URL}/api` || "https://finish-jh38.onrender.com/api";
 
 export const register = async (username: string, email: string, password: string, role: string) => {
   try {
