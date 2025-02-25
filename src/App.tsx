@@ -38,7 +38,7 @@ const App = () => {
         <Navigation />
         <div className="flex flex-col md:flex-row">
           <Sidebar />
-          <main className="flex-1 p-4 md:ml-64"></main>
+          <main className="flex-1 p-4 md:ml-64">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/post/:id" element={<PostDetail />} />
@@ -60,6 +60,7 @@ const App = () => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </main>
         </div>
       </BrowserRouter>
     </TooltipProvider>

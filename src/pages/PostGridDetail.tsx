@@ -44,8 +44,8 @@ const PostGridDetail = () => {
   const authorName = post.author && typeof post.author === "object" ? post.author.username : "Unknown Author";
 
   return (
-    <div className="container mx-auto p-5 w-[960px] ml-[240px] mt-20">
-      <Link to="/postgrid" className="text-blue-500 mb-4 inline-block">
+    <div className="container mx-auto p-5 mt-20">
+      <Link to="/postgrid" className="text-blue-500 mt-2 mb-4 inline-block">
         &larr; Back to Posts
       </Link>
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
