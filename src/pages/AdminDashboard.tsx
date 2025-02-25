@@ -71,7 +71,7 @@ const AdminDashboard: React.FC = () => {
   };
 
   return (
-    <div className="w-full mt-24 max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <div className="w-full mt-10 max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
       <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
       <p>Welcome to your Admin dashboard!</p>
       <Link to="/create-post">

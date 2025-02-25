@@ -58,7 +58,7 @@ const PostDetail = () => {
   }
 
   return (
-    <div className="pt-24 pr-6 pb-12 min-h-screen">
+    <div className="pt-24 pr-6 pb-4 min-h-screen">
       <article className="max-w-3xl mx-auto glass-effect p-8 rounded-lg animate-fade-in">
         <img
           src="/blog.jpg"

@@ -7,7 +7,7 @@ const Navigation = () => {
   return (
     <nav className="glass-effect fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="text-center text-2xl ml-2 font-bold text-primary">
+        <Link to="/" className="block mx-auto text-center text-2xl font-bold text-primary">
           BlogHub
         </Link>
         <h1 className="hidden md:block text-sm text-gray-600">
