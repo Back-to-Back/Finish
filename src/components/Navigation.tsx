@@ -10,7 +10,7 @@ const Navigation = () => {
         <Link to="/" className="block mx-auto text-center text-2xl font-bold text-primary">
           BlogHub
         </Link>
-        <h1 className="hidden md:block text-sm text-gray-600">
+        <h1 className="hidden md:block text-sm mr-10 text-gray-600">
           Enjoy the art of reading news around the world
         </h1>
 
