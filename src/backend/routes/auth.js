@@ -1,9 +1,9 @@
 import express from 'express';
-const router = express.Router();
-const User = require('../models/User');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+import User from '../models/User.js'; 
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
+const router = express.Router();
 
 const API_URL = process.env.VITE_BACKEND_URL
 // Register
