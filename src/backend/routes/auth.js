@@ -1,11 +1,11 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 
-const API_URL = import.meta.env.VITE_BACKEND_URL;
+const API_URL = process.env.VITE_BACKEND_URL
 // Register
 router.post(`${API_URL}/auth/register`, async (req, res) => {
   const { username, email, password, role } = req.body;
