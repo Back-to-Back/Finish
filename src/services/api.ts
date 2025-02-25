@@ -9,7 +9,7 @@ export const register = async (username: string, email: string, password: string
       { username, email, password, role },
       { headers: { "Content-Type": "application/json" } } // Added headers here
     );
-    return response.data;
+    return response?.data || {};
   } catch (error) {
     console.error('Registration Error:', error.response?.data || error.message);
     throw error;
@@ -23,7 +23,7 @@ export const login = async (email: string, password: string) => {
       { email, password },
       { headers: { "Content-Type": "application/json" } }
     );
-    return response.data;
+    return response?.data || {};
   } catch (error) {
     console.error('Login Error:', error.response?.data || error.message);
     throw error;

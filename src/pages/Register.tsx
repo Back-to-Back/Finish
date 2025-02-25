@@ -12,7 +12,8 @@ const Register: React.FC = () => {
     try {
       // Call the register API
       const response = await register(username, email, password, role);
-      const userId = response.data.userId; // Get userId from backend
+      const userId = response?.userId; // Directly access userId
+      if (!userId) throw new Error("User ID not returned from server");
 
       // If role is member, store userId in localStorage and go to /payment
       if (role === 'member') {

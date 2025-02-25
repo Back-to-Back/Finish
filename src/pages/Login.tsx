@@ -11,10 +11,12 @@ const Login: React.FC = () => {
       // Call login API
       const response = await login(email, password);
   
-      // Store token, userId, role, and isPaid in localStorage (if needed)
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('userId', response.data.userId);
-      localStorage.setItem('role', response.data.role);
+      const { token, userId, role, isPaid } = response || {};
+      if (!token || !userId) throw new Error("Invalid response from server");
+
+      localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId);
+      localStorage.setItem('role', role);
   
       // Redirect based on role and payment status
       if (response.data.role === 'member') {
