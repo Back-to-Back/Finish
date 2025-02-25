@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const paypal = require('paypal-rest-sdk');
 const mongoose = require('mongoose');
-const User = require('../models/User');
+const User = require('../models/User').default;
 
 // Configure PayPal with your sandbox credentials
 paypal.configure({
