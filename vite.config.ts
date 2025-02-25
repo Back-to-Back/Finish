@@ -9,7 +9,7 @@ import path from "path";
 
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "0.0.0.0",
+    host: "localhost",
     port: 8080,
     historyApiFallback: true,
   },
