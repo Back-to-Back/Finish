@@ -35,9 +35,10 @@ const App = () => {
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen">
-          <Navigation />
+        <Navigation />
+        <div className="flex flex-col md:flex-row">
           <Sidebar />
+          <main className="flex-1 p-4 md:ml-64"></main>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/post/:id" element={<PostDetail />} />

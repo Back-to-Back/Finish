@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import {useState} from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -7,8 +8,20 @@ import {
 } from "@/components/ui/accordion";
 
 const Sidebar = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <aside className="glass-effect fixed left-0 top-20 bottom-0 w-64 p-6 overflow-y-auto">
+    <aside
+      className={`glass-effect fixed left-0 top-20 bottom-0 w-64 p-6 overflow-y-auto bg-white shadow-md transition-transform duration-300 ${
+        isOpen ? "translate-x-0" : "-translate-x-64"
+      } md:translate-x-0`}
+    >
+      <button
+        className="md:hidden text-gray-700 absolute top-4 right-4"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        ✖
+      </button>
       <div className="space-y-6">
         {/* Navigation Links */}
         <div className="space-y-2">
