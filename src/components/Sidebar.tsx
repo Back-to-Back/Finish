@@ -11,7 +11,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex h-screen">
+    <>
       {/* Mobile Toggle Button */}
       <button
         className="fixed top-5 left-5 z-50 p-2 text-white bg-indigo-600 rounded-md md:hidden"
@@ -30,7 +30,7 @@ const Sidebar = () => {
 
       {/* Sidebar Component */}
       <aside
-        className={`h-screen fixed top-16 left-0 bottom-0 w-64 p-6 overflow-y-auto bg-white shadow-md transition-transform duration-300 z-40
+        className={`fixed left-0 top-16 bottom-0 w-64 p-6 overflow-y-auto bg-white shadow-md transition-transform duration-300 z-40
           ${isOpen ? "translate-x-0" : "-translate-x-64"} md:translate-x-0 md:relative md:block`}
       >
         {/* Close Button for Mobile */}
@@ -165,7 +165,7 @@ const Sidebar = () => {
           </div>
         </div>
       </aside>
-    </div>
+    </>
   );
 };
 
