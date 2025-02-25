@@ -12,7 +12,7 @@ const HOST = "0.0.0.0";
 
 // Middleware
 app.use(cors({
-  origin: "http://finish-rho.vercel.app", // Replace with your actual frontend URL
+  origin: "https://finish-rho.vercel.app", // Replace with your actual frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
