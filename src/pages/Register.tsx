@@ -28,7 +28,7 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="w-full mt-24 max-w-4xl p-6 bg-white shadow-lg rounded-lg">
+    <div className="w-full mt-24 mx-auto max-w-4xl p-6 bg-white shadow-lg rounded-lg">
       <h1 className="text-2xl font-bold mb-6">Register</h1>
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* USERNAME */}

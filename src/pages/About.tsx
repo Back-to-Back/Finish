@@ -1,7 +1,7 @@
 
 const About = () => {
   return (
-    <div className="pt-24 pr-6 pb-12 min-h-screen">
+    <div className="pt-12 pr-6 mx-auto pb-12 min-h-screen">
       <div className="max-w-3xl glass-effect p-8 rounded-lg animate-fade-in">
         <h1 className="text-4xl font-bold mb-8">About BlogHub</h1>
         <div className="space-y-6 text-gray-600">
