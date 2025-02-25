@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const User = require('../models/User');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+import { Router } from 'express';
+const router = Router();
+import User, { findOne } from '../models/User';
+import { sign } from 'jsonwebtoken';
+import { compare } from 'bcryptjs';
 
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
@@ -27,17 +27,17 @@ router.post(`${API_URL}/auth/register`, async (req, res) => {
 router.post(`${API_URL}/auth/login`, async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await User.findOne({ email });
+    const user = await findOne({ email });
     if (!user) {
       return res.status(400).send('Invalid credentials - user not found');
     }
 
-    const match = await bcrypt.compare(password, user.password);
+    const match = await compare(password, user.password);
     if (!match) {
       return res.status(400).send('Invalid credentials - bad password');
     }
 
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET);
+    const token = sign({ id: user._id, role: user.role }, process.env.JWT_SECRET);
 
     // Return role and isPaid status as well
     res.json({
@@ -51,4 +51,4 @@ router.post(`${API_URL}/auth/login`, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

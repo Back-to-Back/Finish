@@ -42,7 +42,7 @@ app.use(express.json());
 app.use("/uploads", express.static(path.resolve(__dirname, "uploads")));
 
 // Routes
-app.use('/api/auth', require('./routes/auth'));
+app.use('/api/auth', require('./routes/auth').default);
 app.use('/api/payments', require('./routes/payments'));
 app.use('/api/posts', require('./routes/posts'));
 app.use('/api/postings', require('./routes/postingroute'));
