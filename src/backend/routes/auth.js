@@ -5,9 +5,8 @@ import bcrypt from 'bcryptjs';
 
 const router = express.Router();
 
-const API_URL = process.env.VITE_BACKEND_URL
 // Register
-router.post(`${API_URL}/auth/register`, async (req, res) => {
+router.post('/register', async (req, res) => {
   const { username, email, password, role } = req.body;
   try {
     const user = new User({ username, email, password, role });
@@ -24,7 +23,7 @@ router.post(`${API_URL}/auth/register`, async (req, res) => {
 });
 
 // Login
-router.post(`${API_URL}/auth/login`, async (req, res) => {
+router.post('login', async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });

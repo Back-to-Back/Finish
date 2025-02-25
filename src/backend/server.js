@@ -1,10 +1,15 @@
-require('dotenv').config({ 
-  path: 'C:/Users/user/Desktop/styled-narrative-hub/.env'
-});
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const path = require("path");
+import dotenv from 'dotenv';
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import path from 'path';
+
+import authRoutes from './routes/auth.js';
+import paymentRoutes from './routes/payments.js';
+import postRoutes from './routes/posts.js';
+import postingRoutes from './routes/postingroute.js';
+
+dotenv.config({ path: 'C:/Users/user/Desktop/styled-narrative-hub/.env' });
 
 const app = express();
 const PORT = process.env.PORT || 10000;
@@ -27,33 +32,25 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.setHeader("Access-Control-Allow-Credentials", "true");
 
-  // Handle preflight requests
   if (req.method === "OPTIONS") {
     return res.sendStatus(200);
   }
-
   next();
 });
 
-// Middleware
 app.use(express.json());
+app.use("/uploads", express.static(path.resolve("uploads")));
 
-// Serve static files from the uploads folder
-app.use("/uploads", express.static(path.resolve(__dirname, "uploads")));
-
-// Routes
-app.use('/api/auth', require('./routes/auth').default);
-app.use('/api/payments', require('./routes/payments'));
-app.use('/api/posts', require('./routes/posts'));
-app.use('/api/postings', require('./routes/postingroute'));
+// ✅ Corrected Route Imports
+app.use('/api/auth', authRoutes);
+app.use('/api/payments', paymentRoutes);
+app.use('/api/posts', postRoutes);
+app.use('/api/postings', postingRoutes);
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, { 
-  useNewUrlParser: true, 
-  useUnifiedTopology: true 
-})
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Start Server
-const server = app.listen(PORT, HOST, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, HOST, () => console.log(`Server running on port ${PORT}`));
