@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 const Membership = () => {
     return (
-      <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+      <div className="min-h-screen mt-20 bg-gray-100 flex flex-col items-center p-6">
         {/* Header */}
         <h1 className="text-3xl font-bold text-center text-gray-800">Unlock Exclusive Benefits with Our Membership</h1>
         <p className="text-gray-600 mt-2 text-center max-w-2xl">
