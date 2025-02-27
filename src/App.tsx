@@ -23,7 +23,7 @@ import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import EditPost from "./pages/EditPost";
 import EditPosting from "./pages/EditPosting";
-
+import Membership from "./pages/Membership";
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -58,6 +58,7 @@ const App = () => {
             <Route path="/editpost/:id" element={<EditPost />} />
             <Route path="/editposting/:id" element={<EditPosting />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/membership" element={<Membership />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           </main>
