@@ -17,7 +17,8 @@ const HOST = "0.0.0.0";
 
 // CORS Configuration
 const corsOptions = {
-  origin: "https://finish-rho.vercel.app", // Frontend URL
+  //origin: "https://finish-rho.vercel.app", // Frontend URL
+  origin: ["https://www.bloghobbyhub.online", "https://finish-rho.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -26,7 +27,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Manually set CORS headers
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://finish-rho.vercel.app");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
@@ -35,6 +36,25 @@ app.use((req, res, next) => {
   if (req.method === "OPTIONS") {
     return res.sendStatus(200);
   }
+  next();
+});
+*/
+app.use((req, res, next) => {
+  const allowedOrigins = ["https://www.bloghobbyhub.online", "https://finish-rho.vercel.app"];
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
   next();
 });
 
