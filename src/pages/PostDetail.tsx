@@ -23,7 +23,7 @@ const posts: Post[] = [
   {
     id: 3,
     title: "Global Economic Trends 2025",
-    excerpt: "Analysis of current economic patterns and their impact on international markets.",
+    excerpt: "Analysis of current economic patterns and their impact on international markets. According to Forbes, Trump is considering imposing tariffs between 10 to 20 percent of imports on goods entering the United States of America. Due to unresolved disputes, on the other hand, Canada and Mexico will face a high tax burden of 25% on imports while China has 60% on its shoulders with an additional 10% on existing ones (as highlighted in Forbes headlines).The economic growth rate is expected to remain at 3%. This is a fair stable rate but no projections have been made yet. Inflation and political tensions are still imminent, especially between the United States and China. According to the United Nations, the growth of Africa is projected to increase rapidly. Most African nations have devoted 27% of interest revenue generated towards payment of outstanding debt from 19% in 2023.",
     author: "Michael Brown",
     date: "Feb 8, 20245",
     category: "Politics",
