@@ -14,7 +14,7 @@ const posts: Post[] = [
   {
     id: 2,
     title: "Mindful Living in a Digital Age",
-    excerpt: "Tips and strategies for maintaining balance and wellness in our technology-driven world.",
+    excerpt: "Tips and strategies for maintaining balance and wellness in our technology-driven world. Without reservations, technology is the main driver of the 21st century – therefore saying no to it is inevitable – and we must be able to control its consumption or usage, not the other way around. Taking regular breaks from using modern gadgets is the best way to avoid burnout, and early mental issues such as headaches, eye strain, and mental deterioration. Another common way of choosing our health over devices is setting boundaries. For instance, family members can be warned to avoid usage when dining. Additionally, you are advised to keep away from these devices perhaps one hour before sleep. At different intervals during the day and night, you can put your phone on DND (Do Not Disturb) mode or change variations of brightness and contrast – such as setting 'Dark Mode' or 'Reading Mode'.",
     author: "Sarah Johnson",
     date: "Feb 10, 2025",
     category: "Lifestyle",

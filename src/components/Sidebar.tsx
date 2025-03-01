@@ -77,13 +77,13 @@ const Sidebar = () => {
                 <AccordionTrigger>Tech</AccordionTrigger>
                 <AccordionContent>
                   <div className="space-y-2 pl-4">
-                    <Link to="/category/tech/ai" className="block nav-link">
+                    <Link to="/subcategory/ai" className="block nav-link">
                       AI
                     </Link>
                     <Link to="/subcategory/webdevelopment" className="block nav-link">
                       Web Development
                     </Link>
-                    <Link to="/category/tech/mobile" className="block nav-link">
+                    <Link to="/subcategory/mobile" className="block nav-link">
                       Mobile
                     </Link>
                   </div>
@@ -95,13 +95,13 @@ const Sidebar = () => {
                 <AccordionTrigger>Lifestyle</AccordionTrigger>
                 <AccordionContent>
                   <div className="space-y-2 pl-4">
-                    <Link to="/category/lifestyle/health" className="block nav-link">
+                    <Link to="/subcategory/health" className="block nav-link">
                       Health
                     </Link>
-                    <Link to="/category/lifestyle/travel" className="block nav-link">
+                    <Link to="/subcategory/travel" className="block nav-link">
                       Travel
                     </Link>
-                    <Link to="/category/lifestyle/food" className="block nav-link">
+                    <Link to="/subcategory/food" className="block nav-link">
                       Food
                     </Link>
                   </div>
@@ -113,10 +113,10 @@ const Sidebar = () => {
                 <AccordionTrigger>Politics</AccordionTrigger>
                 <AccordionContent>
                   <div className="space-y-2 pl-4">
-                    <Link to="/category/politics/world" className="block nav-link">
+                    <Link to="/subcategory/world" className="block nav-link">
                       World
                     </Link>
-                    <Link to="/category/politics/local" className="block nav-link">
+                    <Link to="/subcategory/local" className="block nav-link">
                       Local
                     </Link>
                     <Link to="/subcategory/economy" className="block nav-link">
@@ -131,13 +131,13 @@ const Sidebar = () => {
                 <AccordionTrigger>Career</AccordionTrigger>
                 <AccordionContent>
                   <div className="space-y-2 pl-4">
-                    <Link to="/category/career/job-search" className="block nav-link">
+                    <Link to="/subcategory/job-search" className="block nav-link">
                       Job Search
                     </Link>
-                    <Link to="/category/career/skills" className="block nav-link">
+                    <Link to="/subcategory/skills" className="block nav-link">
                       Skills
                     </Link>
-                    <Link to="/category/career/growth" className="block nav-link">
+                    <Link to="/subcategory/growth" className="block nav-link">
                       Growth
                     </Link>
                   </div>
@@ -149,13 +149,13 @@ const Sidebar = () => {
                 <AccordionTrigger>Books</AccordionTrigger>
                 <AccordionContent>
                   <div className="space-y-2 pl-4">
-                    <Link to="/category/books/fiction" className="block nav-link">
+                    <Link to="/subcategory/fiction" className="block nav-link">
                       Fiction
                     </Link>
-                    <Link to="/category/books/non-fiction" className="block nav-link">
+                    <Link to="/subcategory/non-fiction" className="block nav-link">
                       Non-Fiction
                     </Link>
-                    <Link to="/category/books/education" className="block nav-link">
+                    <Link to="/subcategory/education" className="block nav-link">
                       Education
                     </Link>
                   </div>
