@@ -119,7 +119,7 @@ const Sidebar = () => {
                     <Link to="/category/politics/local" className="block nav-link">
                       Local
                     </Link>
-                    <Link to="/category/politics/economy" className="block nav-link">
+                    <Link to="/subcategory/economy" className="block nav-link">
                       Economy
                     </Link>
                   </div>
